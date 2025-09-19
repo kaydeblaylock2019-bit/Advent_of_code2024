@@ -24,9 +24,9 @@ def prep_data() -> Tuple[List[int], List[int]]:
         for idx, column in enumerate(row.split(" ")):
             if not column == "":
                 if idx == 0:
-                    lhs.append(column)
+                    lhs.append(int(column))
                 else:
-                    rhs.append(column)
+                    rhs.append(int(column))
     return (lhs,rhs)
 
 #calculate distance from the numbers, ex. 3 and 7 distance = 4, 9 and 3 distance = 6
@@ -36,7 +36,7 @@ def calc(lhs=List[int], rhs=List[int]) -> int:
     
     total = 0
     for idx, ln in enumerate(lhs):
-        distance = abs(int(ln) - int(rhs[idx]))
+        distance = abs(ln - rhs[idx])
         total += distance
 
     return total
@@ -50,7 +50,7 @@ def calc2(lhs=List[int], rhs=List[int]) -> int:
         for rn in rhs:
             if ln == rn:
                 counter += 1
-        total += int(ln) * counter
+        total += ln * counter
 
 
     return total
