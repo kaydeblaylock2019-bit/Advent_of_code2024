@@ -1,5 +1,3 @@
-
-#pair up smallest numbers from left and right list, then second smallest from each list and so on
 from typing import List, Tuple
 
 def main():
@@ -11,7 +9,7 @@ def main():
     total2 = calc2(lhs, rhs)
     print("Part 2:", total2)
     
-
+#Prepping data for calculations
 def prep_data() -> Tuple[List[int], List[int]]:
     file = open("real.txt", "r")
     content = file.read()
@@ -29,7 +27,6 @@ def prep_data() -> Tuple[List[int], List[int]]:
                     rhs.append(int(column))
     return (lhs,rhs)
 
-#calculate distance from the numbers, ex. 3 and 7 distance = 4, 9 and 3 distance = 6
 def calc(lhs=List[int], rhs=List[int]) -> int:
     lhs.sort()
     rhs.sort()
@@ -41,7 +38,7 @@ def calc(lhs=List[int], rhs=List[int]) -> int:
 
     return total
 
-#find total distance between both lists ex. 4 + 6 = 10
+
 def calc2(lhs=List[int], rhs=List[int]) -> int:
 
     total = 0
