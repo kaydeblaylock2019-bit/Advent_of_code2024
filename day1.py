@@ -20,7 +20,7 @@ def prep_data() -> Tuple[List[int], List[int]]:
     lhs = []
     rhs = []
 
-    for row in content.splitlines():    
+    for row in content.splitlines():     
         for idx, column in enumerate(row.split(" ")):
             if not column == "":
                 if idx == 0:
